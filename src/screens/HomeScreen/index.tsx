@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import styles from "./style";
+import styles from "./styles";
 const image = require("../../../assets/images/Saly-1.png");
 
 const HomeScreen = () => {
