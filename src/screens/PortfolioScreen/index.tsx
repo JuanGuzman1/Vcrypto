@@ -17,7 +17,7 @@ const portfolioCoins = [
   {
     id: "2",
     name: "Bitcoin",
-    image: "abc",
+    image: "http://abancainnova.com/wp-content/uploads/2017/09/Bitcoin.png",
     symbol: "BTC",
     amount: 1.12,
     valueUSD: 6942,
@@ -25,7 +25,7 @@ const portfolioCoins = [
   {
     id: "3",
     name: "Etherium",
-    image: "abc",
+    image: "http://abancainnova.com/wp-content/uploads/2017/09/Bitcoin.png",
     symbol: "ETH",
     amount: 1.12,
     valueUSD: 6942,

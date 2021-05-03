@@ -16,13 +16,13 @@ const portfolioCoins = [
   {
     id: "2",
     name: "Bitcoin",
-    image: "abc",
+    image: "http://abancainnova.com/wp-content/uploads/2017/09/Bitcoin.png",
     netWorth: 6942,
   },
   {
     id: "3",
     name: "Etherium",
-    image: "abc",
+    image: "http://abancainnova.com/wp-content/uploads/2017/09/Bitcoin.png",
     netWorth: 6942,
   },
 ];

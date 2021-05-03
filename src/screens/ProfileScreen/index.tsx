@@ -7,7 +7,7 @@ const image = require("../../../assets/images/Saly-16.png");
 const ProfileScreen = () => {
   const [user, setUser] = useState({
     id: "1",
-    name: "Vadim",
+    name: "Juan",
     email: "hello@email.com",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
