@@ -15,6 +15,7 @@ import CoinDetailsScreen from "../screens/CoinDetailsScreen";
 import CoinExchangeScreen from "../screens/CoinExchangeScreen";
 
 import NotFoundScreen from "../screens/NotFoundScreen";
+import WelcomeScreen from "../screens/WelcomeSreen";
 import { RootStackParamList } from "../types";
 import BottomTabNavigator from "./BottomTabNavigator";
 import LinkingConfiguration from "./LinkingConfiguration";
@@ -41,6 +42,11 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="Welcome"
+        component={WelcomeScreen}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}

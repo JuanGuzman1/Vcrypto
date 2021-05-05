@@ -1,0 +1,28 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vcrypto-dev-173259-authRole",
+      "UnauthRoleArn": "arn:aws:iam::181323088283:role/amplify-vcrypto-dev-173259-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::181323088283:role/amplify-vcrypto-dev-173259-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-vcrypto-dev-173259-deployment",
+      "UnauthRoleName": "amplify-vcrypto-dev-173259-unauthRole",
+      "StackName": "amplify-vcrypto-dev-173259",
+      "StackId": "arn:aws:cloudformation:us-east-1:181323088283:stack/amplify-vcrypto-dev-173259/85adc2c0-ac5f-11eb-8b03-12fc0b61e9db",
+      "AmplifyAppId": "d210c6gp8s4ejn"
+    },
+    "categories": {
+      "auth": {
+        "vcrypto40ba0cb1": {
+          "googleClientId": "523444655660-hkdrrnb3b9685r051lfebc2b4gkpult6.apps.googleusercontent.com"
+        }
+      },
+      "function": {
+        "vcrypto40ba0cb1PostConfirmation": {
+          "deploymentBucketName": "amplify-vcrypto-dev-173259-deployment",
+          "s3Key": "amplify-builds/vcrypto40ba0cb1PostConfirmation-652f426d49497a4a662b-build.zip"
+        }
+      }
+    }
+  }
+}

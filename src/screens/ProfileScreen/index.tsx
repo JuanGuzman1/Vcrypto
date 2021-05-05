@@ -1,6 +1,7 @@
+import { useNavigation, CommonActions } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View, Text, Image, Pressable } from "react-native";
-import { useThemeColor } from "../../components/Themed";
+import { Auth } from "aws-amplify";
 import styles from "./styles";
 const image = require("../../../assets/images/Saly-16.png");
 
@@ -13,9 +14,17 @@ const ProfileScreen = () => {
       "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
     netWorth: 1212,
   });
-
-  const signOut = () => {
-    console.warn("sign out");
+  const navigation = useNavigation();
+  const signOut = async () => {
+    await Auth.signOut();
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [
+          {name: 'Welcome'},
+        ],
+      })
+    );
   };
 
   return (
@@ -33,7 +42,7 @@ const ProfileScreen = () => {
           <Text style={styles.value}>${user.netWorth}</Text>
         </View>
       </View>
-      <Pressable onPress={signOut} style={{marginTop: 'auto'}}>
+      <Pressable onPress={signOut} style={{ marginTop: "auto" }}>
         <Text>Sign Out</Text>
       </Pressable>
     </View>
