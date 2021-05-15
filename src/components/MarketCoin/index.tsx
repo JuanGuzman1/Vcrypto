@@ -10,13 +10,13 @@ export interface PortfoiloCoinProps {
     name: string;
     symbol: string;
     valueChange24H: number;
-    valueUSD: number;
+    currentPrice: number;
   };
 }
 
 const PortfolioCoin = (props: PortfoiloCoinProps) => {
   const {
-    marketCoin: { image, name, symbol, valueChange24H, valueUSD },
+    marketCoin: { image, name, symbol, valueChange24H, currentPrice },
   } = props;
   const navigation = useNavigation();
 
@@ -33,7 +33,7 @@ const PortfolioCoin = (props: PortfoiloCoinProps) => {
         </View>
       </View>
       <View style={{ alignItems: "flex-end" }}>
-        <Text style={styles.value}>${valueUSD}</Text>
+        <Text style={styles.value}>${currentPrice}</Text>
         <PercentageChange value={valueChange24H} />
       </View>
     </Pressable>
