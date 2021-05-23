@@ -24,7 +24,7 @@
         },
         "vcryptoa619e7ec": {
           "deploymentBucketName": "amplify-vcrypto-dev-173259-deployment",
-          "s3Key": "amplify-builds/vcryptoa619e7ec-337871526f7476684a4d-build.zip"
+          "s3Key": "amplify-builds/vcryptoa619e7ec-56316a35724d2b576e4d-build.zip"
         }
       }
     }

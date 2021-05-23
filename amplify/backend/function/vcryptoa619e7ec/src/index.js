@@ -35,7 +35,7 @@ const getCoinAmount = async (coinPortfolioCoinId, userId) => {
     coinData.Item.amount &&
     coinData.Item.amount.N
   ) {
-    return coinData.Item.amount.N;
+    return parseFloat(coinData.Item.amount.N);
   }
 
   return 0;
@@ -57,7 +57,7 @@ const getUsdAmount = async (usdPortfolioCoinId, userId) => {
     coinData.Item.amount &&
     coinData.Item.amount.N
   ) {
-    return coinData.Item.amount.N;
+    return parseFloat(coinData.Item.amount.N);
   }
 
   return 0;
@@ -75,13 +75,17 @@ const getCoin = async (coinId) => {
   return coinData;
 };
 
+
+
 const canBuyCoin = (coin, amountToBuy, usdAmount) => {
-  return usdAmount >= coin.Item.currentPrice.N * amountToBuy;
+  return usdAmount >= parseFloat(coin.Item.currentPrice.N) * amountToBuy;
 };
 
 const canSellCoin = (amountToSell, portfolioAmount) => {
   return portfolioAmount >= amountToSell;
 };
+
+
 
 const buyCoin = async (
   coin,
@@ -93,7 +97,7 @@ const buyCoin = async (
 ) => {
   const date = new Date();
   //decrease USD
-  const newUsdAmount = usdAmount - coin.Item.currentPrice.N * amountToBuy;
+  const newUsdAmount = usdAmount - parseFloat(coin.Item.currentPrice.N) * amountToBuy;
   const params = {
     Item: {
       id: { S: usdPortfolioCoinId },
@@ -138,7 +142,7 @@ const sellCoin = async (
 ) => {
   const date = new Date();
   //increase USD
-  const newUsdAmount = usdAmount + coin.Item.currentPrice.N * amountToSell;
+  const newUsdAmount = usdAmount + parseFloat(coin.Item.currentPrice.N) * amountToSell;
   const params = {
     Item: {
       id: { S: usdPortfolioCoinId },

@@ -1,31 +1,43 @@
 import { useNavigation, CommonActions } from "@react-navigation/native";
-import React, { useState } from "react";
-import { View, Text, Image, Pressable } from "react-native";
-import { Auth } from "aws-amplify";
+import React, { useContext, useEffect, useState } from "react";
+import { View, Text, Image, Pressable, ActivityIndicator } from "react-native";
+import { Auth, API, graphqlOperation } from "aws-amplify";
+import { getUser } from "../../graphql/queries";
 import styles from "./styles";
+import AppContext from "../../utils/AppContext";
 const image = require("../../../assets/images/Saly-16.png");
 
 const ProfileScreen = () => {
-  const [user, setUser] = useState({
-    id: "1",
-    name: "Juan",
-    email: "hello@email.com",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png",
-    netWorth: 1212,
-  });
+  const [user, setUser] = useState(null);
   const navigation = useNavigation();
+  const { userId } = useContext(AppContext);
   const signOut = async () => {
     await Auth.signOut();
     navigation.dispatch(
       CommonActions.reset({
         index: 0,
-        routes: [
-          {name: 'Welcome'},
-        ],
+        routes: [{ name: "Welcome" }],
       })
     );
   };
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await API.graphql(
+          graphqlOperation(getUser, { id: userId })
+        );
+        setUser(response.data.getUser);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    fetchUser();
+  }, []);
+
+  if (!user) {
+    return <ActivityIndicator />;
+  }
 
   return (
     <View style={styles.root}>
@@ -39,7 +51,7 @@ const ProfileScreen = () => {
           </View>
         </View>
         <View style={{ alignItems: "flex-end" }}>
-          <Text style={styles.value}>${user.netWorth}</Text>
+          <Text style={styles.value}>${user.networth}</Text>
         </View>
       </View>
       <Pressable onPress={signOut} style={{ marginTop: "auto" }}>
