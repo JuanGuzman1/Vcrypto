@@ -6,6 +6,7 @@ import styles from "./styles";
 
 export interface PortfoiloCoinProps {
   marketCoin: {
+    id: string;
     image: string;
     name: string;
     symbol: string;
@@ -16,14 +17,14 @@ export interface PortfoiloCoinProps {
 
 const PortfolioCoin = (props: PortfoiloCoinProps) => {
   const {
-    marketCoin: { image, name, symbol, valueChange24H, currentPrice },
+    marketCoin: { id, image, name, symbol, valueChange24H, currentPrice },
   } = props;
   const navigation = useNavigation();
 
   return (
     <Pressable
       style={styles.root}
-      onPress={() => navigation.navigate("CoinDetails")}
+      onPress={() => navigation.navigate("CoinDetails", { id })}
     >
       <View style={styles.left}>
         <Image style={styles.image} source={{ uri: image }} />

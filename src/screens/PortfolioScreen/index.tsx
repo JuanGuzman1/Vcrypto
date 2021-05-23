@@ -1,36 +1,11 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
+import {API, graphqlOperation} from 'aws-amplify';
+import {} from './queries';
 import PortfolioCoin from "../../components/PortfolioCoin";
 import styles from "./styles";
 const image = require("../../../assets/images/Saly-10.png");
-
-const portfolioCoins = [
-  {
-    id: "1",
-    name: "Virtual Dollars",
-    image: "http://abancainnova.com/wp-content/uploads/2017/09/Bitcoin.png",
-    symbol: "USD",
-    amount: 69.42,
-    valueUSD: 6942,
-  },
-  {
-    id: "2",
-    name: "Bitcoin",
-    image: "http://abancainnova.com/wp-content/uploads/2017/09/Bitcoin.png",
-    symbol: "BTC",
-    amount: 1.12,
-    valueUSD: 6942,
-  },
-  {
-    id: "3",
-    name: "Etherium",
-    image: "http://abancainnova.com/wp-content/uploads/2017/09/Bitcoin.png",
-    symbol: "ETH",
-    amount: 1.12,
-    valueUSD: 6942,
-  },
-];
 
 const PortfolioScreen = () => {
   return (

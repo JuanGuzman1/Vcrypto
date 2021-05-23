@@ -21,6 +21,10 @@
         "vcrypto40ba0cb1PostConfirmation": {
           "deploymentBucketName": "amplify-vcrypto-dev-173259-deployment",
           "s3Key": "amplify-builds/vcrypto40ba0cb1PostConfirmation-4a374c6c646c51306a77-build.zip"
+        },
+        "vcryptoa619e7ec": {
+          "deploymentBucketName": "amplify-vcrypto-dev-173259-deployment",
+          "s3Key": "amplify-builds/vcryptoa619e7ec-337871526f7476684a4d-build.zip"
         }
       }
     }

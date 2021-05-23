@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "api": {
+      "vcrypto": [
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
