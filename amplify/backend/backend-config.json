@@ -37,6 +37,11 @@
           ]
         }
       ]
+    },
+    "fetchCoinsPrices": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "api": {

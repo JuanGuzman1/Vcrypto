@@ -25,6 +25,10 @@
         "vcryptoa619e7ec": {
           "deploymentBucketName": "amplify-vcrypto-dev-173259-deployment",
           "s3Key": "amplify-builds/vcryptoa619e7ec-56316a35724d2b576e4d-build.zip"
+        },
+        "fetchCoinsPrices": {
+          "deploymentBucketName": "amplify-vcrypto-dev-173259-deployment",
+          "s3Key": "amplify-builds/fetchCoinsPrices-526c596a416d5648475a-build.zip"
         }
       }
     }
